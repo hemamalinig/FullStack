@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Selectors Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <p>This paragraph is inside a div and should be red.</p>
+        <p>This paragraph is also inside a div and should be red.</p>
+    </div>
+    
+    <section>
+        <p>This paragraph is a direct child of a section and should be light blue.</p>
+        <div>
+            <p>This paragraph is inside a div within a section and should not be light blue.</p>
+        </div>
+    </section>
+    
+    <h2>Heading 2</h2>
+    <p>This paragraph is an adjacent sibling of h2 and should be light gray.</p>
+    <p>This paragraph is a general sibling of h2 and should be light pink.</p>
+    <span>  <p>This paragraph is not a direct child so no gray nor pink</p></span>
+    <div><span>  <p>This paragraph is not a direct child so no gray nor pink</p></span></div>
+    <p>This paragraph is a general sibling of h2 and should be light pink.</p>
+    <p>This paragraph is also a general sibling of h2 and should be light pink.</p>
+</body>
+</html>

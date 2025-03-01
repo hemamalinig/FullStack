@@ -2,22 +2,42 @@
     background-color: lightgreen;
 }
 
-/* Element selector to change the color of all paragraphs to green */
+/* Element selector to change the color of all paragraphs to green
 p {
     color: green;
 }
 
-/* Class selector to set the background color of elements with the class highlight to yellow */
+/* Class selector to set the background color of elements with the class highlight to yellow 
 .highlight {
     background-color: yellow;
 }
 
-/* ID selector to set the color of a specific heading with the ID main-heading to blue */
+/* ID selector to set the color of a specific heading with the ID main-heading to blue 
 #main-heading {
     color: blue;
 }
 
-/* Class selector to set the text size to large */
+/* Class selector to set the text size to large 
 .text-large {
     font-size: 1.5em;
+} */
+
+/* Descendant selector to change the color of all paragraphs inside a div to red */
+div  p {
+    color: red;
+}
+
+/* Child selector to set the background color of paragraphs that are direct children of a section to light blue */
+section > p {
+    background-color: lightblue;
+}
+
+/* Adjacent sibling selector to change the background color of a paragraph that directly follows an h2 to light gray */
+h2 + p {
+    background-color: rgb(33, 33, 173);
+}
+
+/* General sibling selector to set the background color of all paragraphs that are siblings of an h2 to light pink */
+h2 ~ p {
+    background-color: lightpink;
 }
