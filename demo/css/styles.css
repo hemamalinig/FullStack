@@ -34,10 +34,27 @@ section > p {
 
 /* Adjacent sibling selector to change the background color of a paragraph that directly follows an h2 to light gray */
 h2 + p {
-    background-color: rgb(33, 33, 173);
+    background-color: lightgray;
 }
 
 /* General sibling selector to set the background color of all paragraphs that are siblings of an h2 to light pink */
-h2 ~ p {
+/* h2 ~ p {
     background-color: lightpink;
+} */
+
+/* Change the font of a heading */
+.main-heading {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Set the font-size of paragraphs to 20px */
+p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
