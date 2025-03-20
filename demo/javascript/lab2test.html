@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        #result {
+            padding: 10px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .first-class {
+            background-color: green;
+            color: white;
+        }
+        .second-class {
+            background-color: yellow;
+            color: black;
+        }
+        .third-class {
+            background-color: lightgreen;
+            color: darkred;
+        }
+        .pass {
+            background-color: black;
+            color: white;
+        }
+        .fail {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Development Grade Classification</h1>
+    <form id="gradeForm">
+        <label for="htmlMarks">HTML Marks:</label>
+        <input type="number" id="htmlMarks" required><br><br>
+        <label for="cssMarks">CSS Marks:</label>
+        <input type="number" id="cssMarks" required><br><br>
+        <label for="jsMarks">JavaScript Marks:</label>
+        <input type="number" id="jsMarks" required><br><br>
+        <button type="button" onclick="calculateGrade()">Calculate Grade</button>
+    </form>
+    <div id="result">Enter marks and click "Calculate Grade" to see the result.</div>
+
+    <script>
+        function calculateGrade() {
+            // Get input values
+            const htmlMarks = parseInt(document.getElementById("htmlMarks").value);
+            const cssMarks = parseInt(document.getElementById("cssMarks").value);
+            const jsMarks = parseInt(document.getElementById("jsMarks").value);
+
+            const resultDiv = document.getElementById("result");
+
+            // Check for failure
+            if (htmlMarks < 50 || cssMarks < 50 || jsMarks < 50) {
+                resultDiv.textContent = "Fail";
+                resultDiv.className = "fail";
+                return;
+            }
+
+            // Calculate total marks
+            const totalMarks = htmlMarks + cssMarks + jsMarks;
+
+            // Classify based on total marks
+            if (totalMarks >= 240) {
+                resultDiv.textContent = "First Class";
+                resultDiv.className = "first-class";
+            } else if (totalMarks >= 210 && totalMarks <= 239) {
+                resultDiv.textContent = "Second Class";
+                resultDiv.className = "second-class";
+            } else if (totalMarks >= 180 && totalMarks <= 209) {
+                resultDiv.textContent = "Third Class";
+                resultDiv.className = "third-class";
+            } else if (totalMarks >= 150 && totalMarks <= 179) {
+                resultDiv.textContent = "Pass";
+                resultDiv.className = "pass";
+            }
+        }
+    </script>
+</body>
+</html>

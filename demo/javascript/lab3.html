@@ -1,0 +1,45 @@
+<html>
+<header>
+    <title>Lab 3 : Working with Objects</title>
+    <h1>Lab 3 : Working with Objects</h1>
+</header>
+
+<body>
+    <div id="content">
+        <h2>Employee Information</h2>
+    </div>
+    <button id="btn" onclick="updateObject()">Click Me</button>
+    <div id="output">Click the button to see object information.</div>
+    </div>
+    <script>
+        function updateObject() {
+            // Create an employee object
+            const employee = {
+                employeeId: 101,
+                name: "John Doe",
+                designation: "Software Engineer",
+                salary: 50000,
+            }
+            function giveRaise() {
+                employee.salary += 5000;
+            }
+            function changeDesignation() {
+                employee.designation = "Senior Software Engineer";
+            }
+            // Call the giveRaise function
+            giveRaise();
+            // Call the changeDesignation function
+            changeDesignation();
+            document.getElementById("output").innerHTML = "Employee Name: " + employee.name + "<br> Employee Designation: " + employee.designation + "<br> Employee Salary: " + employee.salary;
+            function displayEmployeeDetails(){
+                console.log("Employee ID: " + employee.employeeId);
+                console.log("Employee Name: " + employee.name);
+                console.log("Employee Designation: " + employee.designation);
+                console.log("Employee Salary: " + employee.salary);
+            }
+            displayEmployeeDetails();
+        }
+    </script>
+</body>
+
+</html>
