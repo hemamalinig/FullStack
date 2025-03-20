@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Objects</title>
+</head>
+<body>
+    <h1>Employee Object Example</h1>
+    <button onclick="displayEmployeeDetails()">Display Employee Details</button>
+    <button onclick="giveRaise()">Give Raise</button>
+    <button onclick="changeDesignation()">Change Designation</button>
+
+    <script>
+        // Create an employee object
+        const employee = {
+            employeeId: 101,
+            name: "John Doe",
+            designation: "Software Engineer",
+            salary: 50000,
+
+            // Method to give a raise
+            giveRaise: function (amount) {
+                this.salary += amount;
+                console.log(`Salary updated! New salary: ${this.salary}`);
+            },
+
+            // Method to change designation
+            changeDesignation: function (newDesignation) {
+                this.designation = newDesignation;
+                console.log(`Designation updated! New designation: ${this.designation}`);
+            }
+        };
+        displayEmployeeDetails(); // Display initial details
+        // Function to display employee details
+        function displayEmployeeDetails() {
+            console.log("Employee Details:");
+            console.log(`ID: ${employee.employeeId}`);
+            console.log(`Name: ${employee.name}`);
+            console.log(`Designation: ${employee.designation}`);
+            console.log(`Salary: ${employee.salary}`);
+        }
+
+        // Function to give a raise
+        function giveRaise() {
+            const raiseAmount = 10000; // Example raise amount
+            employee.giveRaise(raiseAmount);
+            displayEmployeeDetails(); // Display updated details
+        }
+
+        // Function to change designation
+        function changeDesignation() {
+            const newDesignation = "Senior Software Engineer"; // Example new designation
+            employee.changeDesignation(newDesignation);
+            displayEmployeeDetails(); // Display updated details
+        }
+    </script>
+</body>
+</html>

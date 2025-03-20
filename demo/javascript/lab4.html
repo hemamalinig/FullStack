@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Arrays</title>
+</head>
+<body>
+    <h1>Employee Array Example</h1>
+    <button onclick="displayEmployees()">Display Employees</button>
+    <button onclick="addEmployee()">Add Employee</button>
+    <button onclick="removeEmployee()">Remove Employee</button>
+
+    <script>
+        // Create an array of employee objects
+        const employees = [
+            { employeeId: 101, name: "John Doe", designation: "Software Engineer", salary: 50000 },
+            { employeeId: 102, name: "Jane Smith", designation: "Project Manager", salary: 75000 },
+            { employeeId: 103, name: "Alice Johnson", designation: "UI/UX Designer", salary: 60000 }
+        ];
+
+        // Function to display all employees
+        function displayEmployees() {
+            console.clear(); // Clear the console
+            console.log("Employee Records:");
+            employees.forEach((employee, index) => {
+                console.log(`Employee ${index + 1}:`);
+                console.log(`ID: ${employee.employeeId}`);
+                console.log(`Name: ${employee.name}`);
+                console.log(`Designation: ${employee.designation}`);
+                console.log(`Salary: ${employee.salary}`);
+                console.log("-------------------------");
+            });
+        }
+
+        // Function to add a new employee
+        function addEmployee() {
+            const newEmployee = {
+                employeeId: 104,
+                name: "Bob Brown",
+                designation: "QA Engineer",
+                salary: 55000
+            };
+            employees.push(newEmployee); // Add the new employee to the array
+            console.log("New employee added!");
+            displayEmployees(); // Display updated employee list
+        }
+
+        // Function to remove an employee by index
+        function removeEmployee() {
+            const indexToRemove = 1; // Example: Remove the second employee (index 1)
+            if (indexToRemove >= 0 && indexToRemove < employees.length) {
+                employees.splice(indexToRemove, 1); // Remove the employee at the specified index
+                console.log(`Employee at index ${indexToRemove} removed!`);
+            } else {
+                console.log("Invalid index. No employee removed.");
+            }
+            displayEmployees(); // Display updated employee list
+        }
+    </script>
+</body>
+</html>
+
