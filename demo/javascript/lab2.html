@@ -1,0 +1,78 @@
+<html>
+<header>
+    <title>Web Development Grade Classification</title>
+    <h1>Web Development Grade Classification</h1>
+    <style>
+        #gradeForm {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .fail{
+            background-color: red;
+            color: white;
+        }
+        .pass{
+            background-color: black;
+            color: white;
+        }
+        .firstClass{
+            background-color: green;
+            color: white;
+        }
+        .secondClass{
+            background-color: yellow;
+            color: white;
+        }
+        .thirdClass{
+            background-color: lightgreen;
+            position: relative;
+        }
+        </style>
+    <body>
+        <form id="gradeForm">
+            <h1>Enter your grade:</h1>
+            <label for="grade"> HTML</label>
+            <input type="number" id="html" name="grade" min="0" max="100" required>
+            <label for="grade"> CSS</label>
+            <input type="number" id="css" name="grade" min="0" max="100" required>
+            <label for="grade"> JavaScript</label>
+            <input type="number" id="js" name="grade" min="0" max="100" required>
+            <button type="button" onclick="calculateGrade()">Submit</button>
+        
+        </form>
+        <div id="output">See the result here...</div>
+    </body>
+    <script>
+        
+        function calculateGrade() {
+            var html = parseInt(document.getElementById("html").value);
+            var css = parseInt(document.getElementById("css").value) ;
+            var js = parseInt(document.getElementById("js").value) ;
+            var total = html + css + js;
+            console.log(total);
+            
+            if (html < 50 || css < 50 || js < 50) {
+                document.getElementById("output").innerHTML = "Fail";
+                document.getElementById("output").classList.add("fail");
+            } else if (total >= 240) {
+                document.getElementById("output").innerHTML = "First Class";
+                document.getElementById("output").classList.add("firstClass");
+            } else if (total <= 210 || total >= 239) {
+                document.getElementById("output").innerHTML = "Second Class";
+                document.getElementById("output").classList.add("secondClass");
+            } else if (total <= 180 || total >= 209) {
+                document.getElementById("output").innerHTML = "Third Class";
+                document.getElementById("output").classList.add("thirdClass");
+            } else if (total <= 150 || total >= 179) {
+                document.getElementById("output").innerHTML = "Pass";
+                document.getElementById("output").classList.add("pass");
+            }
+            
+        }
+
+    </script>
+</header>
+
+</html>

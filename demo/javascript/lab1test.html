@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab - Working with Variables</title>
+    <style>
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Working with Variables</h1>
+    <button onclick="displayVariableInfo()">Show Variable Info</button>
+    <div id="output">Click the button to see variable information.</div>
+
+    <script>
+        // Declare variables
+        var userName = "Hema";   // String
+        let userAge = 28;          // Number
+        const isEmployee = true;   // Boolean
+
+        // Function to display variable information
+        function displayVariableInfo() {
+            // Update var and let variables
+            userName = "Hema - SuperMoM"; // Reassigning var
+            userAge = 30;        // Reassigning let
+
+            // Attempt to change const variable (this will throw an error in the console)
+            try {
+                isEmployee = false; // This will cause an error
+            } catch (error) {
+                console.error("Error: Cannot reassign a const variable:", error.message);
+            }
+
+            // Gather variable information
+            const output = `
+                <p><strong>userName:</strong> ${userName} (Type: ${typeof userName})</p>
+                <p><strong>userAge:</strong> ${userAge} (Type: ${typeof userAge})</p>
+                <p><strong>isEmployee:</strong> ${isEmployee} (Type: ${typeof isEmployee})</p>
+            `;
+
+            // Update the content of the div
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
