@@ -87,3 +87,17 @@ p {
     overflow-y: hidden; /* Disable vertical scrolling 
     white-space: nowrap; /* Prevent text from wrapping to the next line 
 } */
+.container{
+    position: relative;
+}
+.child{
+    position: absolute;
+    top: 50px;
+    left: 30px;
+}
+.overlap{
+   z-index: 1;
+   position: absolute;
+   top: 50px;
+ 
+}
