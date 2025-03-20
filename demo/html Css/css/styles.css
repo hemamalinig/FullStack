@@ -87,7 +87,7 @@ p {
     overflow-y: hidden; /* Disable vertical scrolling 
     white-space: nowrap; /* Prevent text from wrapping to the next line 
 } */
-.container{
+/* .container{
     position: relative;
 }
 .child{
@@ -100,4 +100,47 @@ p {
    position: absolute;
    top: 50px;
  
+} */
+.container {
+    position: relative; /* Parent div with relative positioning */
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    border: 2px solid black;
+    margin: 20px;
 }
+
+.child {
+    position: absolute; /* Child div with absolute positioning */
+    top: 50px; /* Move 50px from the top of the parent */
+    left: 30px; /* Move 30px from the left of the parent */
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    border: 2px solid darkgreen;
+}
+
+.overlap {
+    position: absolute; /* Overlapping div */
+    top: 70px; /* Adjust position to overlap */
+    left: 70px;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent red */
+    border: 2px solid darkred;
+    z-index: 10; /* Higher z-index to ensure it overlaps */
+}
+/* Explanation:
+Parent Div (.container):
+
+position: relative; ensures that the child div's position: absolute; is calculated relative to this parent.
+A fixed width, height, and background color are applied for visibility.
+Child Div (.child):
+
+position: absolute; positions the child div relative to the parent.
+top: 50px; and left: 30px; move the child div 50px from the top and 30px from the left of the parent.
+Overlapping Div (.overlap):
+
+position: absolute; allows it to overlap other elements.
+z-index: 10; ensures it appears on top of the other divs.
+A semi-transparent background color (rgba(255, 0, 0, 0.7)) is used to make the overlap visually distinct.*/
