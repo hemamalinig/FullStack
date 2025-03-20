@@ -144,3 +144,76 @@ Overlapping Div (.overlap):
 position: absolute; allows it to overlap other elements.
 z-index: 10; ensures it appears on top of the other divs.
 A semi-transparent background color (rgba(255, 0, 0, 0.7)) is used to make the overlap visually distinct.*/
+
+/* Inline elements */
+.inline {
+    display: inline; /* Inline display */
+    background-color: lightblue;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid blue;
+}
+
+/* Inline-block elements */
+.inline-block {
+    display: inline-block; /* Inline-block display */
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid green;
+    width: 150px; /* Set a fixed width */
+}
+
+/* Block elements */
+.block {
+    display: block; /* Block display */
+    background-color: lightcoral;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid red;
+    width: 150px; /* Set a fixed width */
+}/* Inline elements */
+.inline {
+    display: inline; /* Inline display */
+    background-color: lightblue;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid blue;
+}
+
+/* Inline-block elements */
+.inline-block {
+    display: inline-block; /* Inline-block display */
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid green;
+    width: 150px; /* Set a fixed width */
+}
+
+/* Block elements */
+.block {
+    display: block; /* Block display */
+    background-color: lightcoral;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid red;
+    width: 150px; /* Set a fixed width */
+}
+/*Explanation:
+Inline Elements (.inline):
+
+display: inline; makes the elements flow inline with other content.
+They do not respect width or height properties and only take up as much space as their content requires.
+Inline-block Elements (.inline-block):
+
+display: inline-block; allows the elements to flow inline but also respect width and height properties.
+They behave like block elements in terms of sizing but remain inline with other elements.
+Block Elements (.block):
+
+display: block; makes the elements take up the full width of their container by default.
+They start on a new line and respect width and height properties.
+Expected Output:
+Inline Elements: Appear side by side, wrapping to the next line if there isn't enough space.
+Inline-block Elements: Appear side by side but retain their specified width and height.
+Block Elements: Stack vertically, each taking up the full width of the container.*/
