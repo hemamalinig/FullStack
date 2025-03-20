@@ -58,3 +58,10 @@ p {
 .uppercase {
     text-transform: uppercase;
 }
+/* Apply background image to the entire page */
+body {
+    background-image: url('images/pic2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
