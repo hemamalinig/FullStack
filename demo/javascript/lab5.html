@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        #errorMessage {
+            color: red;
+            margin-top: 10px;
+        }
+        #successMessage {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form id="myForm">
+        <label for="fname">Name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="errorMessage"></div>
+    <div id="successMessage"></div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Clear previous messages
+            document.getElementById("errorMessage").innerHTML = "";
+            document.getElementById("successMessage").innerHTML = "";
+
+            // Get form values
+            const name = document.getElementById("fname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+
+            // Validation
+            if (!name || !email || !phone) {
+                document.getElementById("errorMessage").innerHTML = "All fields are required.";
+                return;
+            }
+
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                document.getElementById("errorMessage").innerHTML = "Name should only contain letters and spaces.";
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById("errorMessage").innerHTML = "Invalid email format.";
+                return;
+            }
+
+            if (!/^\d{10}$/.test(phone)) {
+                document.getElementById("errorMessage").innerHTML = "Phone number must be exactly 10 digits.";
+                return;
+            }
+
+            // If all validations pass
+            document.getElementById("successMessage").innerHTML = "Form submitted successfully!";
+        });
+    </script>
+</body>
+</html>
